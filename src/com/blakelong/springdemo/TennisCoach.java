@@ -3,7 +3,7 @@ package com.blakelong.springdemo;
 import org.springframework.stereotype.Component;
 
 // spring will scan package and classes with @Component annotation will have bean registered with container
-@Component("tennisCoach")
+@Component
 public class TennisCoach implements Coach {
 
 
