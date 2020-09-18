@@ -6,6 +6,11 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="/Users/bal/Downloads/de.jayefem.log4e_pro_2.0.1/plugins/de.jayefem.log4e_2.0.1/log4e.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="lib" path="lib/spring-aop-5.2.9.RELEASE.jar"/>
 	<classpathentry kind="lib" path="lib/spring-aop-5.2.9.RELEASE-javadoc.jar"/>
 	<classpathentry kind="lib" path="lib/spring-aop-5.2.9.RELEASE-sources.jar"/>
