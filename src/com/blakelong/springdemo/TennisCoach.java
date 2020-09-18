@@ -9,6 +9,8 @@ public class TennisCoach implements Coach {
 
 	private FortuneService fortuneService;
 	
+	// spring will scan components and look for one that implements the FortuneService interface
+	// @Component annotation in HappyFortuneService will be found and that classes implementation will be used
 	@Autowired
 	public TennisCoach(FortuneService fortuneService) {
 		this.fortuneService = fortuneService;
