@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class TennisCoach implements Coach {
 
+	// ** field injection
 	@Autowired
 	@Qualifier("randomFortuneService")
 	private FortuneService fortuneService;
@@ -16,7 +17,7 @@ public class TennisCoach implements Coach {
 		System.out.println("inside default TennisCoach constructor for diagnostic purposes");
 	}
 	
-	// constructor injection
+	// ** constructor injection
 	// spring will scan components and look for one that implements the FortuneService interface
 	// @Component annotation in HappyFortuneService will be found and that classes implementation will be used
 //	@Autowired
@@ -24,7 +25,7 @@ public class TennisCoach implements Coach {
 //		this.fortuneService = fortuneService;
 //	}
 	
-	// setter injection example
+	// ** setter injection example
 //	@Autowired
 //	public void setFortuneService(FortuneService fortuneService) {
 //		this.fortuneService = fortuneService;

@@ -1,5 +1,8 @@
 package com.blakelong.springdemo;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class DataBaseFortuneService implements FortuneService {
 
 	@Override
