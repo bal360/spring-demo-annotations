@@ -16,6 +16,9 @@
     <!-- add entry to enable component scanning -->
     <context:component-scan base-package="com.blakelong.springdemo"></context:component-scan>
     
+    <!-- properties file config -->
+    <context:property-placeholder location="classpath:sport.properties"/>
+    
 
 </beans>
 

@@ -2,6 +2,7 @@ package com.blakelong.springdemo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 // spring will scan package and classes with @Component annotation will have bean registered with container
@@ -12,6 +13,13 @@ public class TennisCoach implements Coach {
 	@Autowired
 	@Qualifier("randomFortuneService")
 	private FortuneService fortuneService;
+	
+	// properties fields
+	@Value("${team.colors}")
+	private String colors;
+	
+	@Value("${team.name}")
+	private String teamName;
 	
 	public TennisCoach() {
 		System.out.println("inside default TennisCoach constructor for diagnostic purposes");
@@ -30,6 +38,14 @@ public class TennisCoach implements Coach {
 //	public void setFortuneService(FortuneService fortuneService) {
 //		this.fortuneService = fortuneService;
 //	}
+	
+	public String getTeamColors() {
+		return colors;
+	}
+	
+	public String getTeamName() {
+		return teamName;
+	}
 
 	@Override
 	public String getDailyWorkout() {
