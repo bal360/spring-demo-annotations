@@ -1,6 +1,7 @@
 package com.blakelong.springdemo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 // spring will scan package and classes with @Component annotation will have bean registered with container
@@ -8,7 +9,12 @@ import org.springframework.stereotype.Component;
 public class TennisCoach implements Coach {
 
 	@Autowired
+	@Qualifier("randomFortuneService")
 	private FortuneService fortuneService;
+	
+	public TennisCoach() {
+		System.out.println("inside default TennisCoach constructor for diagnostic purposes");
+	}
 	
 	// constructor injection
 	// spring will scan components and look for one that implements the FortuneService interface
