@@ -1,5 +1,8 @@
 package com.blakelong.springdemo;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -8,7 +11,7 @@ import org.springframework.stereotype.Component;
 
 // spring will scan package and classes with @Component annotation will have bean registered with container
 @Component
-@Scope("prototype")
+//@Scope("prototype")
 public class TennisCoach implements Coach {
 
 	// ** field injection
@@ -25,6 +28,11 @@ public class TennisCoach implements Coach {
 	
 	public TennisCoach() {
 		System.out.println("inside default TennisCoach constructor for diagnostic purposes");
+	}
+	
+	@PostConstruct
+	public void executeUponInit() {
+		System.out.println("Starting up");
 	}
 	
 	// ** constructor injection
@@ -57,6 +65,11 @@ public class TennisCoach implements Coach {
 	@Override
 	public String getDailyFortune() {
 		return fortuneService.getFortune();
+	}
+	
+	@PreDestroy
+	public void executeUponClose() {
+		System.out.println("Closing down");
 	}
 
 }
