@@ -11,7 +11,7 @@ public class TennisCoach implements Coach {
 
 	// ** field injection
 	@Autowired
-	@Qualifier("randomFortuneService")
+	@Qualifier("fileFortuneService")
 	private FortuneService fortuneService;
 	
 	// properties fields
