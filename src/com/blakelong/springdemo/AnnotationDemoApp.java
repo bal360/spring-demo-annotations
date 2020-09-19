@@ -10,7 +10,8 @@ public class AnnotationDemoApp {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");  
 		
 		// get the bean from spring container
-		TennisCoach tennisCoach = (TennisCoach)context.getBean("tennisCoach", Coach.class);
+		Coach tennisCoach = context.getBean("tennisCoach", Coach.class);
+		Coach anotherTennisCoach = context.getBean("tennisCoach", Coach.class);
 		
 		// call a method on the bean
 		System.out.println(tennisCoach.getDailyWorkout());
@@ -20,8 +21,12 @@ public class AnnotationDemoApp {
 		System.out.println(tennisCoach.getDailyFortune());
 		
 		// call fields from properties file
-		System.out.println("Team Name: " + tennisCoach.getTeamName() + "\n" + 
-							"Team Colors: " + tennisCoach.getTeamColors());
+//		System.out.println("Team Name: " + tennisCoach.getTeamName() + "\n" + 
+//							"Team Colors: " + tennisCoach.getTeamColors());
+		
+		// check bean scope
+		System.out.println(tennisCoach.hashCode());
+		System.out.println(anotherTennisCoach.hashCode());
 		
 		// close the context
 		context.close();

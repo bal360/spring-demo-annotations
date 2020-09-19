@@ -3,10 +3,12 @@ package com.blakelong.springdemo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 // spring will scan package and classes with @Component annotation will have bean registered with container
 @Component
+@Scope("prototype")
 public class TennisCoach implements Coach {
 
 	// ** field injection
