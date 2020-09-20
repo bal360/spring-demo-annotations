@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 
+import javax.annotation.PostConstruct;
+
 import org.springframework.stereotype.Component;
 
 @Component
@@ -13,9 +15,10 @@ public class FileFortuneService implements FortuneService {
 
 	private ArrayList<String> fortunesArrayList = new ArrayList<>();
 	
-	
+	@PostConstruct
 	@Override
 	public String getFortune() {
+		System.out.println("Executing after constructor and dependencies injected");
 		try(BufferedReader br = new BufferedReader(new FileReader("fortunesFile.txt"))) {
 		
 			String tempLine;
